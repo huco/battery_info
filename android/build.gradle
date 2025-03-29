@@ -2,7 +2,7 @@ group 'com.igrik12.battery_info'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.8.10'
+    ext.kotlin_version = '1.9.22'
     repositories {
         google()
         jcenter()
@@ -26,6 +26,16 @@ apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 33
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
